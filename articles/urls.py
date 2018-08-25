@@ -10,4 +10,6 @@ urlpatterns = [
          views.ArticleDetailView.as_view(), name='article_detail'),
     path('<int:pk>/delete/',
          views.ArticleDeleteView.as_view(), name='article_delete'),
+    path('<int:pk>/comments/new/',
+         views.CommentCreateView.as_view(), name='comment_new'),
 ]

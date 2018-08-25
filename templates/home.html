@@ -9,7 +9,9 @@
     {% if user.is_authenticated %}
       <p class="lead">Please create an article.</p>
     {% else %}
-      <p class="lead">Please <a href="{% url 'signup' %}">sign up</a> and create an article.</p>
+      <p class="lead">
+        Please <a href="{% url 'signup' %}">sign up</a> or <a href="{% url 'login' %}">login</a> to create an article.
+      </p>
     {% endif %}
     <p class="lead">
       <a class="btn btn-primary btn-lg" href="{% url 'article_list' %}" role="button">View All Articles</a>
