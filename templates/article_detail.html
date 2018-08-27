@@ -24,8 +24,14 @@
         </div>
       {% endfor %}
     </div>
+  {% else %}
+    <div>There are no comments...</div>
   {% endif %}
 
-  <a href="{% url 'comment_new' article.pk %}">Add</a>
+  {% if user.is_authenticated %}
+      <a class="btn btn-success" href="{% url 'comment_new' article.pk %}">Add Comment</a>
+  {% else %}
+      <div>Please, <a href="{% url 'login' %}">login</a> or <a href="{% url 'signup' %}">signup</a> to add comments</div>
+  {% endif %}
 
 {% endblock content %}

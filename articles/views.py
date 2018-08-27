@@ -48,6 +48,6 @@ class CommentCreateView(LoginRequiredMixin, CreateView):
 
      def form_valid(self, form):
         form.instance.author = self.request.user
-        form.instance.article = models.Article.objects.get(id=1)
+        form.instance.article = models.Article.objects.get(id=self.kwargs['pk'])
         print(self.get_initial())
         return super().form_valid(form)

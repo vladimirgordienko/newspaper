@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     #3rd Party
     'rest_framework',
     'crispy_forms',
+    'rest_framework_swagger',
 
     #Local
     'users',
